@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,8 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Pokémon Rojo</title>
   <style>
-    html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; overflow: hidden; }
-    #game { width: 100%; height: 100%; }
+    html, body { 
+      margin: 0; 
+      padding: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: #000 url('portada.jpg') no-repeat center center;
+      background-size: contain; /* Usa 'cover' si prefieres que llene toda la pantalla recortando bordes */
+      overflow: hidden; 
+    }
+    #game { 
+      width: 100%; 
+      height: 100%; 
+    }
+    /* Hace transparente la capa negra de la pantalla de inicio de EmulatorJS para que se vea la portada */
+    .ejs_start_button_container, .ejs_menu_bar, #game > div {
+      background-color: rgba(0, 0, 0, 0.25) !important;
+    }
   </style>
 </head>
 <body>
@@ -18,7 +34,8 @@
     EJS_player = '#game';
     EJS_core = 'gb';
     EJS_gameUrl = 'Pkmn_Red.zip';
-    EJS_backgroundImage = 'portada.jpg';
+    EJS_backgroundImage = new URL('portada.jpg', window.location.href).href;
+    EJS_backgroundBlur = false;
     EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
   </script>
   <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
