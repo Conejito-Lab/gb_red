@@ -1,4 +1,3 @@
-HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,28 +5,28 @@ HTML
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Pokémon Rojo</title>
   <style>
-    html, body { 
-      margin: 0; 
-      padding: 0; 
-      width: 100%; 
-      height: 100%; 
-      background: #000 url('portada.jpg') no-repeat center center;
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      background-image: url('portada.jpg');
+      background-position: center center;
+      background-repeat: no-repeat;
       background-size: contain;
-      overflow: hidden; 
+      overflow: hidden;
     }
-    #game { 
-      width: 100%; 
-      height: 100%; 
-    }
-    .ejs_start_button_container, .ejs_menu_bar, #game > div {
-      background-color: rgba(0, 0, 0, 0.25) !important;
+    #game, #game > div, .ejs_parent, .ejs_start_button_container {
+      width: 100%;
+      height: 100%;
+      background: transparent !important;
+      background-color: transparent !important;
     }
   </style>
 </head>
 <body>
-  <div style="width:100%;height:100%;">
-    <div id="game"></div>
-  </div>
+  <div id="game"></div>
 
   <script>
     EJS_player = '#game';
@@ -35,6 +34,7 @@ HTML
     EJS_gameUrl = 'Pkmn_Red.zip';
     EJS_backgroundImage = new URL('portada.jpg', window.location.href).href;
     EJS_backgroundBlur = false;
+    EJS_backgroundColor = 'transparent';
     EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
   </script>
   <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
